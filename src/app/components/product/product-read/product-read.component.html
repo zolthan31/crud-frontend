@@ -1,0 +1,58 @@
+<div class="mat-elevation-z5">
+    <table mat-table [dataSource]="products">
+        <!-- Id Column -->
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef>Id</th>
+            <td mat-cell *matCellDef="let products">{{products.id}}</td>
+        </ng-container>
+        <!-- Modelo Column -->
+        <ng-container matColumnDef="modelo">
+            <th mat-header-cell *matHeaderCellDef>Modelo</th>
+            <td mat-cell *matCellDef="let products">{{products.modelo}}</td>
+        </ng-container>
+        <!-- Ano Column -->
+        <ng-container matColumnDef="ano">
+            <th mat-header-cell *matHeaderCellDef>Ano</th>
+            <td mat-cell *matCellDef="let products">{{products.ano}}</td>
+        </ng-container>
+        <!-- Marca Column -->
+        <ng-container matColumnDef="marca">
+            <th mat-header-cell *matHeaderCellDef>Marca</th>
+            <td mat-cell *matCellDef="let products">{{products.marca}}</td>
+        </ng-container>
+        <!-- Placa Column -->
+        <ng-container matColumnDef="placa">
+            <th mat-header-cell *matHeaderCellDef>Placa</th>
+            <td mat-cell *matCellDef="let products">{{products.placa}}</td>
+        </ng-container>
+        <!-- Renavam Column -->
+        <ng-container matColumnDef="renavam">
+            <th mat-header-cell *matHeaderCellDef>Renavam</th>
+            <td mat-cell *matCellDef="let products">{{products.renavam}}</td>
+        </ng-container>
+        <!-- Chasi Column -->
+        <ng-container matColumnDef="chasi">
+            <th mat-header-cell *matHeaderCellDef>Chasi</th>
+            <td mat-cell *matCellDef="let products">{{products.chasi}}</td>
+        </ng-container>
+        <!-- Action Column -->
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef>Ações</th>
+            <td mat-cell *matCellDef="let products">
+                <a routerLink="/products/update/{{ products.id }}" class="edit">
+                    <i class="material-icons">
+                        edit
+                    </i>
+                </a>
+                <a routerLink="/products/delete/{{ products.id }}" class="delete">
+                    <i class="material-icons">
+                        delete
+                    </i>
+                </a>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let products; columns: displayedColumns;"></tr>
+    </table>
+</div>

@@ -1,0 +1,12 @@
+.home .title {
+     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+     font-size: 3rem;
+     font-weight: 300;
+     line-height: 1.2;
+}
+
+.home .subtitle {
+    font-family:inherit;
+    font-size: 1.1rem;
+    color: #9f1e4f;
+}
